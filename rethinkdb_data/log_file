@@ -1,0 +1,26 @@
+2016-10-01T21:21:56.071840000 0.063953s notice: Recursively removing directory /Users/futureworkz/Documents/Workspace/react-native/ChatServer/rethinkdb_data/tmp
+2016-10-01T21:21:56.073729000 0.065849s notice: Initializing directory /Users/futureworkz/Documents/Workspace/react-native/ChatServer/rethinkdb_data
+2016-10-01T21:21:56.073853000 0.065966s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/Users/futureworkz/Documents/Workspace/react-native/ChatServer/rethinkdb_data' did not already exist or is empty.)
+2016-10-01T21:21:56.073949000 0.066063s notice: Running rethinkdb 2.3.4 (CLANG 7.3.0 (clang-703.0.31))...
+2016-10-01T21:21:56.085558000 0.077672s notice: Running on Darwin 15.6.0 x86_64
+2016-10-01T21:21:56.085619000 0.077732s notice: Loading data from directory /Users/futureworkz/Documents/Workspace/react-native/ChatServer/rethinkdb_data
+2016-10-01T21:21:56.196783000 0.188896s info: Automatically using cache size of 100 MB
+2016-10-01T21:21:56.196815000 0.188928s warn: Cache size does not leave much memory for server and query overhead (available memory: 654 MB).
+2016-10-01T21:21:56.196824000 0.188937s warn: Cache size is very low and may impact performance.
+2016-10-01T21:21:56.199779000 0.191893s notice: Listening for intracluster connections on port 29015
+2016-10-01T21:21:56.202122000 0.194235s notice: Listening for client driver connections on port 28015
+2016-10-01T21:21:56.202276000 0.194389s notice: Listening for administrative HTTP connections on port 8080
+2016-10-01T21:21:56.202280000 0.194392s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2016-10-01T21:21:56.202285000 0.194398s notice: Listening on driver addresses: 127.0.0.1, ::1
+2016-10-01T21:21:56.202287000 0.194400s notice: Listening on http addresses: 127.0.0.1, ::1
+2016-10-01T21:21:56.202293000 0.194406s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2016-10-01T21:21:56.202298000 0.194411s notice: Server ready, "jim_local_ui9" 272f2017-80b5-460e-b0d4-5856ea648d3c
+2016-10-01T21:21:57.961626000 1.953668s notice: A newer version of the RethinkDB server is available: 2.3.5. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
+2016-10-01T21:22:18.877486000 22.868819s info: Table 0a272d5a-e5b2-4215-86b7-dda8f3586ee9: Starting a new Raft election for term 1.
+2016-10-01T21:22:18.881136000 22.872469s info: Table 0a272d5a-e5b2-4215-86b7-dda8f3586ee9: Added replica on this server.
+2016-10-01T21:22:18.891859000 22.883191s info: Table 0a272d5a-e5b2-4215-86b7-dda8f3586ee9: This server is Raft leader for term 1. Latest log index is 0.
+2016-10-01T21:22:19.396897000 23.388230s info: Table 0a272d5a-e5b2-4215-86b7-dda8f3586ee9: Configuration is changing.
+2016-10-01T21:24:39.892365000 163.878730s info: Table 56696873-4337-4d5e-87ac-077613d59574: Starting a new Raft election for term 1.
+2016-10-01T21:24:39.892782000 163.879146s info: Table 56696873-4337-4d5e-87ac-077613d59574: Added replica on this server.
+2016-10-01T21:24:39.902491000 163.888855s info: Table 56696873-4337-4d5e-87ac-077613d59574: This server is Raft leader for term 1. Latest log index is 0.
+2016-10-01T21:24:40.404397000 164.390761s info: Table 56696873-4337-4d5e-87ac-077613d59574: Configuration is changing.
