@@ -3,7 +3,6 @@ class Api::V1::UsersController < ApplicationController
   def create
     user = User.new(user_params)
     user.username.downcase! if user.username
-    
     if user.save
       render json: {
         status: :success,
@@ -38,6 +37,14 @@ class Api::V1::UsersController < ApplicationController
       operation: :friends,
       status: :success,
       data: current_user.friends
+    }
+  end 
+  
+  def strangers
+    render json: {
+      operation: :strangers,
+      status: :success,
+      data: current_user.strangers
     }
   end
 
