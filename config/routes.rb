@@ -12,7 +12,14 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     scope module: :v1,
               constraints: ApiConstraints.new(version: 1, default: true) do
-      resources :users, only: [:create, :show, :update]
+      resources :users, only: [:create, :show, :update] do
+        collection do
+          get 'strangers', to: 'users#strangers'
+          get 'friends', to: 'users#friends'
+          get 'chats', to: 'users#chats'
+          get 'inviters', to: 'users#inviters'
+        end
+      end
       resources :chats, only: [:index]
       resources :messages, only: [:create, :index]
     end
