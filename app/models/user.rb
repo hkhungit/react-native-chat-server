@@ -5,11 +5,12 @@ class User
 
   field :username,        type: String, required: true, unique: true
   field :fullname,        type: String, required: true
+  field :status,          type: String
   field :password,        type: String
   field :password_digest, type: String
-  field :tokens,          type: Array
-  field :friends,         type: Array
-  field :inviters,        type: Array
+  field :tokens,          type: Array, default: []
+  field :friends,         type: Array, default: []
+  field :inviters,        type: Array, default: []
 
   has_many :messages
   has_secure_password
@@ -28,7 +29,29 @@ class User
 
   def friend_with_ids
     friends.map { |x| x['id'] }
-  end  
+  end
+
+  def add_friend(user, host = false)
+    friends.push(user.format) unless friendship?(user)
+    inviters.delete_if{|usr| usr['id'] == user.id}
+    user.add_friend(self) if host
+    save
+  end
+
+  def add_inviter(user)
+    inviters.push(user.format_friends) unless invited?(user)
+    save
+  end 
+
+  def invite_remove(user)
+    inviters.delete_if{|usr| usr['id'] == user.id} && save
+  end
+
+  def strangers
+    User.where(not: {:id.in => friend_with_ids})
+        .where(not: {id: id})
+        .map{|stranger| {}.merge({invited: stranger.invited?(self)}.merge(stranger.format_item))}
+  end
 
   def chats
     Chat.where(->(doc) { doc[:users].contains(->(user) { user['id'].eq id })})
@@ -56,6 +79,6 @@ class User
   end  
 
   def format_item
-    self.as_json(only: [:id, :fullname])
+    self.as_json(only: [:id, :username, :fullname, :status])
   end
 end
