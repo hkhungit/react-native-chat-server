@@ -6,7 +6,10 @@ class Api::V1::MessagesController < ApplicationController
       render json: {
         operation: :index,
         status: :success,
-        data: chat,
+        data: {
+          chat: chat,
+          messages:  chat.messages
+        },
       }
     else
       render json: {
@@ -28,6 +31,6 @@ class Api::V1::MessagesController < ApplicationController
   end
 
   def chat_id
-    params.require(:message).permit(:chat_id).to_h
+    params[:chat_id] || params.require(:message).permit(:chat_id).to_h
   end
 end
